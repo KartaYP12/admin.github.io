@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/css/bootstrap.min.css" integrity="sha512-aqT9YD5gLuLBr6ipQAS+72o5yHKzgZbGxEh6iY8lW/r6gG14e2kBTAJb8XrxzZrMOgSmDqtLaF76T0Z6YY2IHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link href="https://cdn.datatables.net/v/bs4/dt-1.13.8/datatables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand"><i class="fas fa-code me-2"></i>Daftar Keanggotaan</a>
+            <button class="navbar-toggler" data-bs-target="#my-nav"
+            data-bs-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class ="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/"><i class="fas fa-home me-1"></i>Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/add"><i class="fas fa-user-plus me-1"></i>Add Member</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto mt-4">
+                <div class="card shadow">
+                    <div class="card-header bg-primary">
+                        <h5 class="text-light">Add New Member</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="/add" method="post" id="add-form" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="name">Nama</label>
+                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Masukkan Nama" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" class="form-control form-control-lg" placeholder="Masukkan Email" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone">No. Tlp</label>
+                                <input type="tel" name="phone" class="form-control form-control-lg" placeholder="Masukkan Nomor Telepon" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone">Nama Bidang</label>
+                                <input type="tel" name="bidang" class="form-control form-control-lg" placeholder="Masukkan Nama Bidang" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone">Status</label>
+                                <input type="tel" name="status" class="form-control form-control-lg" placeholder="(Active/InActive)" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone">Instagram</label>
+                                <input type="tel" name="instagram" class="form-control form-control-lg" placeholder="Masukkan Username IG" required/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Select Image</label>
+                                <input type="file" name="image" class="form-control form-control-lg" required/>
+                            </div>
+                            <div class="mb-3">
+                                <input type="submit" name="submit" value="Add Member" class="btn btn-primary btn-lg" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta2/js/bootstrap.bundle.min.js" integrity="sha512-43iShtbiyImxjjU4a9rhXBy7eKtIsrpll8xKhe1ghKqh5NyfME8phZs5JRFZpRBe1si44WM3tNmnqMym7JRmDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.8/datatables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("table").DataTable({
+                order:[0, "desc"]
+            });
+        });
+    </script>
+</body>
+</html>
